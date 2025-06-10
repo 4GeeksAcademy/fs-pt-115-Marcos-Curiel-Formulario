@@ -1,111 +1,137 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Formulario</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+		integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 </head>
+
 <body>
-    <form action="URL" method="post">
-        <div class="container mt-5">
-            <div class="card">
-                <div class="card-header">
-                    <h1>Payment form Example</h1>
-                </div>
-                <div class="container p-3">
-                    <div class="alert alert-danger" role="alert"> 
-                        <strong>Some fields are missing</strong>
-                    </div>
-                    <div class="d-flex gap-4 justify-content-around">
-                        <fieldset class="NumeroTarjeta">
-                            <label for="CardNumber" class="form-label"><strong>Card#</strong></label>
-                            <input type="number" class="form-control" id="CardNumber" placeholder="XXXXXXXXXXXXXXXX" required checked>
-                        </fieldset>
-                        <fieldset class="CCV">
-                            <label for="NumeroSecreto" class="form-label"><strong>CVC#</strong></label>
-                            <input type="number" class="form-control" id="NumeroSecreto" placeholder="0000" required checked>
-                        </fieldset>
-                        <fieldset class="Cantidad">
-                            <label for="CantidadDinero" class="form-label"><strong>Amount</strong></label>
-                           <div class="Dollar"><input type="number" class="form-control" id="CantidadDinero" placeholder="Amount" required></div>
-                        </fieldset>
-                    </div>
-                    <div class="d-flex mt-3 gap-4">
-                        <div class="w-50">
-                            <fieldset class=" FirstName mb-3">
-                                <label for="FirstName" class="form-label"><strong>First Name</strong></label>
-                                <input type="text" class="form-control" id="FirstName" required>
-                            </fieldset>
-                            <fieldset class=" City mb-3">
-                                <label for="City" class="form-label"><strong>City</strong></label>
-                                <input type="text" class="form-control" id="City" required>
-                            </fieldset>
-                            <fieldset class="mb-3">
-                                <p><strong>We accept:</strong></p>
-                                <div class="d-flex bg-secondary p-2 rounded-1 gap-3" style="width: fit-content;">
-                                    <label class="form-check-label d-flex align-items-center gap-2 text-white">
-                                    <input type="radio" name="credit-card" value="MasterCard" class="form-check-input" required checked>
-                                    <i class="fab fa-cc-mastercard fa-lg"></i>
-                                    </label>
+	<div class="container mt-5 mb-5">
+		<form method="" class="row g-4 border border-2 rounded-top rounded-bottom">
 
-                                    <label class="form-check-label d-flex align-items-center gap-2 text-white">
-                                    <input type="radio" name="credit-card" value="Visa" class="form-check-input">
-                                    <i class="fab fa-cc-visa fa-lg"></i>
-                                    </label>
+			<!-- HEADER -->
 
-                                    <label class="form-check-label d-flex align-items-center gap-2 text-white">
-                                    <input type="radio" name="credit-card" value="DinersClub" class="form-check-input">
-                                    <i class="fab fa-cc-diners-club fa-lg"></i>
-                                    </label>
+			<div class="border-bottom border-2 bg-body-secondary mt-0 rounded-top-1">
+				<h1>Payment form</h1>
+			</div>
 
-                                    <label class="form-check-label d-flex align-items-center gap-2 text-white">
-                                    <input type="radio" name="credit-card" value="AmericanExpress" class="form-check-input">
-                                    <i class="fab fa-cc-amex fa-lg"></i>
-                                    </label>
-                                </div>
-                            </fieldset>
-                        </div>
-                        <div class="w-50 mb-3">
-                            <fieldset class="mb-3">
-                                <label for="LastName" class="form-label"><strong>Last Name</strong></label>
-                                <input type="text" class="form-control" id="LastName" required>
-                            </fieldset>
-                            <div class="d-flex mb-3 gap-4">
-                                <fieldset class="w-50">
-                                    <label for="State" class="form-label"><strong>State</strong></label>
-                                    <select name="State" id="State" class="form-select" required>
-                                        <option selected disabled>Pick a State</option>
-                                        <option value="Spain">Spain</option>
-                                        <option value="New York">New York</option>
-                                    </select>
-                                </fieldset>
-                                <fieldset class="w-50">
-                                    <label for="PostalCode" class="form-label"><strong>Postal Code</strong></label>
-                                    <input type="text" class="form-control" id="PostalCode" required>
-                                </fieldset>
-                            </div>
-                            <fieldset>
-                                <p><strong>Message</strong></p>
-                                <textarea name="Message" id="SendMessage" class="form-control" rows="4"></textarea>
-                                <div id="SendMessage" class="form-text">Add any notes here.</div>
-                            </fieldset>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer text-body-secondary d-flex justify-content-end gap-2">
-                    <button type="reset" class="btn btn-secondary">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Send</button>
-                </div>
-            </div>
-        </div>
-    </form>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+			<!-- ALERT -->
+
+			<div class="p-2">
+				<div class="alert alert-danger" role="alert">
+					<strong>Some fields are missing</strong>
+				</div>
+			</div>
+
+			<!-- INPUTS LINE -->
+
+			<div class="col-12 col-md-5">
+				<label for="cardNumber" class="form-label"><strong>Card #</strong></label>
+				<input type="number" class="form-control" name="cardNumber" id="cardNumber"
+					placeholder="XXXXXXXXXXXXXXXX" required>
+			</div>
+			<div class="col-6 col-md-3">
+				<label for="secretCode" class="form-label"><strong>CVC #</strong></label>
+				<input type="number" class="form-control" name="secretCode" id="secretCode" placeholder="0000" required>
+			</div>
+			<div class="col-6 col-md-4">
+				<label for="amount" class="form-label"><strong>Amount</strong></label>
+				<div class="input-group">
+					<span class="input-group-text" id="inputGroupPrepend2">$</span>
+					<input type="number" class="form-control" name="amount" id="amount" placeholder="Amount" required>
+				</div>
+			</div>
+
+			<!-- INPUTS LINE 2 -->
+
+			<div class="col-6 col-md-6">
+				<label for="firstName" class="form-label"><strong>First Name</strong></label>
+				<input type="text" class="form-control" name="firstName" id="firstName" maxlength="10" required>
+			</div>
+			<div class="col-6 col-md-6">
+				<label for="lastName" class="form-label"><strong>Last Name</strong></label>
+				<input type="text" class="form-control" name="lastName" id="lastName" maxlength="20" required>
+			</div>
+
+			<!-- INPUTS LINE 3 -->
+
+			<div class="col-12 col-md-6">
+				<label for="city" class="form-label"><strong>City</strong></label>
+				<input type="text" class="form-control" name="city" id="city" required>
+			</div>
+			<div class="col-6 col-md-3">
+				<label for="state" class="form-label"><strong>State</strong></label>
+				<select class="form-select" name="state" id="state" required>
+					<option selected disabled value="">Pick a state</option>
+					<option>Spain</option>
+					<option>France</option>
+					<option>Italy</option>
+					<option>Germany</option>
+					<option>Portugal</option>
+					<option>Microsoft Dream</option>
+				</select>
+			</div>
+			<div class="col-6 col-md-3">
+				<label for="zipCode" class="form-label"><strong>Postal Code</strong></label>
+				<input type="text" class="form-control" name="zipCode" id="zipCode" required>
+			</div>
+
+			<!-- INPUTS LINE 4 -->
+
+			<div class="col-6 col-md-6 mb-3">
+				<Label for="WeAccept" class="form-label d-block"><strong>We Accept:</strong></Label>
+				<div class="d-flex justify-content-center bg-secondary p-2 rounded-1 gap-4" style="width: fit-content;">
+					<label class="form-check-label text-white">
+						<input type="radio" name="credit-card" value="MasterCard" class="form-check-input" required
+							checked>
+						<i class="fab fa-cc-mastercard fa-lg"></i>
+					</label>
+
+					<label class="form-check-label text-white">
+						<input type="radio" name="credit-card" value="Visa" class="form-check-input">
+						<i class="fab fa-cc-visa fa-lg"></i>
+					</label>
+
+					<label class="form-check-label text-white">
+						<input type="radio" name="credit-card" value="DinersClub" class="form-check-input">
+						<i class="fab fa-cc-diners-club fa-lg"></i>
+					</label>
+
+					<label class="form-check-label text-white">
+						<input type="radio" name="credit-card" value="AmericanExpress" class="form-check-input">
+						<i class="fab fa-cc-amex fa-lg"></i>
+					</label>
+				</div>
+			</div>
+			<div class="col-12 col-md-6">
+				<p><strong>Message</strong></p>
+				<textarea name="Message" id="SendMessage" class="form-control" rows="4"></textarea>
+				<div id="SendMessage" class="form-text">Add any notes here.</div>
+			</div>
+
+			<!--BUTTONS SUBMIT -->
+
+				<div class="d-grid gap-2 d-md-flex justify-content-md-end border-top border-2 bg-body-secondary rounded-bottom-1 p-3">
+					<button class="btn btn-secondary me-md-2" type="button">Cancel</button>
+					<button class="btn btn-success" type="button">Send</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js"
+		integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D"
+		crossorigin="anonymous"></script>
 </body>
+
 </html>
- 
- 
- 
- 
